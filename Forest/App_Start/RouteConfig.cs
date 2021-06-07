@@ -13,17 +13,18 @@ namespace Forest
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            //routes.MapRoute(
-            //    name: "Genres",
-            //    url: "{controller}/{action}/{id}",
-            //    defaults: new { controller = "Genre", action = "GetGenres", id = UrlParameter.Optional }
-            //);
+            routes.MapRoute(
+               name: "Default",
+               url: "{controller}/{action}/{id}",
+               defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+               );
 
             routes.MapRoute(
-                name: "Default",
+                name: "Genres",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Genre", action = "GetGenres", id = UrlParameter.Optional }
             );
+
         }
     }
 }
