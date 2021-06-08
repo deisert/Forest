@@ -10,5 +10,7 @@ namespace Forest.Services.IService
     public interface IGenreService
     {
         IList<Genre> GetGenres();
+
+        Genre GetGenre(int id);
     }
 }

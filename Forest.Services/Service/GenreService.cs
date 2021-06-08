@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Forest.Data.DAO;
 using Forest.Data.IDAO;
 using Forest.Data.Models.Domain;
+using Forest.Data.Repository;
 using Forest.Services.IService;
 
 namespace Forest.Services.Service
@@ -21,7 +22,16 @@ namespace Forest.Services.Service
 
         public IList<Genre> GetGenres()
         {
-            return genreDAO.GetGenres();
+            using (var context = new ForestContext())
+            {
+                return genreDAO.GetGenres(context);
+            }
+            //return genreDAO.GetGenres();
         }
+
+      /*  public Genre GetGenre(int id)
+        {
+            //return object 
+        }*/
     }
 }

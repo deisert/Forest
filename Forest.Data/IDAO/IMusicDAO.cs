@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Forest.Data.Models.Domain;
-using Forest.Data.Repository;
 
 namespace Forest.Data.IDAO
 {
-    public interface IGenreDAO
+    public interface IMusicDAO
     {
-        IList<Genre> GetGenres(ForestContext context);
+        IList<Music> GetMusic(int id);
     }
 }

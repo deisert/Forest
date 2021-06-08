@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Forest.Data.Models.Domain;
-using Forest.Data.Repository;
+using Microsoft.Win32;
 
-namespace Forest.Data.IDAO
+namespace Forest.Services.IService
 {
-    public interface IGenreDAO
+    public interface IMusicService
     {
-        IList<Genre> GetGenres(ForestContext context);
+        IList<Music> GetMusic(int id);
     }
 }

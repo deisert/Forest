@@ -52,7 +52,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\GenreDAO.cs" />
+    <Compile Include="DAO\MusicDAO.cs" />
     <Compile Include="IDAO\IGenreDAO.cs" />
+    <Compile Include="IDAO\IMusicDAO.cs" />
     <Compile Include="Models\Domain\Artist.cs" />
     <Compile Include="Models\Domain\Genre.cs" />
     <Compile Include="Models\Domain\Music.cs" />

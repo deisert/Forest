@@ -20,6 +20,12 @@ namespace Forest.Controllers
             return View(genreService.GetGenres());
         }
 
+        //Music in Genres Lecture Displaying Music in Genre
+        public ActionResult GetGenre(int id)
+        {
+            return View(genreService.GetGenre(id));
+        }
+
         // GET: Genre
         public ActionResult Index()
         {

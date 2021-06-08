@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 using Forest.Data.IDAO;
 using Forest.Data.Models.Domain;
 using Forest.Data.Repository;
@@ -19,9 +20,17 @@ namespace Forest.Data.DAO
             context = new ForestContext(); 
         }
 
-        public IList<Genre> GetGenres()
+        public IList<Genre> GetGenres(ForestContext context)
         {
             return context.Genres.ToList();
+        }
+
+        public Genre GetGenre(int id)
+        {
+            //EagerLoading (Not LazyLoading)
+            context.Genres.Include(g => g.Musics).ToList();
+            //return GenreObject
+            return context.Genres.Find(id);
         }
     }
 }
